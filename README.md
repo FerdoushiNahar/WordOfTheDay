@@ -30,3 +30,66 @@ It caches external API results for 24 hours and exposes clean endpoints.
   ],
   "date": "2025-09-06"
 }
+# Project TODOs
+
+## v1
+
+### Required
+
+#### Functional
+- **Expose Word of the Day** at an endpoint  
+  - Return a **unique word of the recent day** with its definition.  
+  - **Cache the word for the entire day** to avoid unnecessary external calls.  
+
+#### Externals
+- (TBD: Define external API for fetching word definitions)
+
+#### Non-Functional
+- **Documentation**  
+  - `README.md` explaining setup & usage  
+  - API Documentation using **Swagger/OpenAPI**  
+  - JavaDoc for classes & methods  
+
+- **Testing**  
+  - Unit Tests (**mandatory**)  
+  - Integration Tests (**optional**)  
+
+- **Code Quality**  
+  - Follow **clean code principles**  
+  - Use proper **naming conventions**  
+  - Maintain an **organized project structure**  
+
+---
+
+## v2
+
+### Package Structure
+
+#### controller
+- `WordOfTheDayController`
+
+#### config
+- `RestConfig.java`
+
+#### exception
+- `GlobalExceptionHandler`
+
+#### model
+- **domain** (core domain models)
+- **dto**
+  - `DefinitionResponse.java`
+
+#### persistence
+- **entity**
+  - `DailyDefinitionCache.java`
+  - `SavedWord.java`
+- **repository**
+  - `SavedWordRepository.java`
+  - `DailyDefinitionCacheRepository.java`
+
+#### service
+- `DefinitionService.java`
+- `WordService.java`
+
+---
+
